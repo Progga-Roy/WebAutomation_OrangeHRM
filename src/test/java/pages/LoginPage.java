@@ -1,0 +1,20 @@
+package pages;
+
+import org.openqa.selenium.By;
+import utilities.DriverSetUp;
+
+public class LoginPage extends BasePages {
+
+    public String  url = "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login";
+    public String userName = "Admin";
+    public String userPassword = "admin123";
+    public String errorText = "Invalid credentials";
+    public String requiredText = "Required";
+    public By brandLogo = By.xpath("//img[@alt='company-branding']");
+    public By userInputField = By.xpath("//input[@placeholder='Username']");
+    public By userPasswordField = By.xpath("//input[@placeholder='Password']");
+    public By loginBtn = By.xpath("//button[normalize-space()='Login']");
+    public By errorMsgField = By.xpath("//p[@class='oxd-text oxd-text--p oxd-alert-content-text']");
+    public By  inputRequiredText = By.xpath("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']");
+}
+

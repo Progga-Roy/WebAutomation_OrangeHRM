@@ -1,45 +1,46 @@
 package utilities;
 
+
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 
-import java.time.Duration;
-
 public class DriverSetUp {
     private static final String browser_name = System.getProperty("browser","Chrome");
     private static final ThreadLocal<WebDriver>DRIVER_THREAD_LOCAL = new ThreadLocal<>();
 
-    public void setDriver(WebDriver driver){
+    public static void setDriver(WebDriver driver){
         DriverSetUp.DRIVER_THREAD_LOCAL.set(driver);
     }
-    public WebDriver getDriver(){
-        return DRIVER_THREAD_LOCAL.get();
 
+    public static WebDriver getDriver() {
+        return DRIVER_THREAD_LOCAL.get();
     }
 
-   @BeforeSuite
+    @BeforeSuite
     public void startBrowser(){
-      WebDriver driver = getBrowser(browser_name);
-      setDriver(driver);
+       WebDriver driver = getBrowser(browser_name);
+       setDriver(driver);
     }
     @AfterSuite
     public void closeBrowser(){
         getDriver().quit();
     }
+
     public WebDriver getBrowser(String name){
-        if(name.equalsIgnoreCase("Chrome")){
+        if (name.equalsIgnoreCase("Chrome")){
             return new ChromeDriver();
-        } else if(name.equalsIgnoreCase("edge")){
-            return new EdgeDriver();
-        } if(name.equalsIgnoreCase("Firefox")){
+        }else if (name.equalsIgnoreCase("firefox")){
             return new FirefoxDriver();
+        }else if (name.equalsIgnoreCase("Edge")){
+            return new EdgeDriver();
         }
         else{
-            throw new RuntimeException("Browser not available in this name : " + name);
+            throw new RuntimeException("Browser is not available at this :" + name);
         }
     }
 }
