@@ -33,4 +33,10 @@ public class BasePages {
    public String getElementText(By locator){
        return getElement(locator).getText();
    }
+   public boolean visibilityState (By locator){
+       return getElement(locator).isDisplayed();
+   }
+   public void backwardPage(){
+        getDriver().navigate().back();
+   }
 }
