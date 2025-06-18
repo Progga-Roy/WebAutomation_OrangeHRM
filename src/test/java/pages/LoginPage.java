@@ -11,6 +11,7 @@ public class LoginPage extends BasePages {
     public String errorText = "Invalid credentials";
     public String requiredText = "Required";
     public String  resetPassHeaderText = "Reset Password";
+    public String  dashboardText = "Dashboard";
     public String resetPassText = "Reset Password link sent successfully";
     public By brandLogo = By.xpath("//img[@alt='company-branding']");
     public By userInputField = By.xpath("//input[@placeholder='Username']");
@@ -23,6 +24,8 @@ public class LoginPage extends BasePages {
     public By resetPassBtn = By.xpath("//button[normalize-space()='Reset Password']");
     public By cancelResetPassBtn = By.xpath("//button[normalize-space()='Reset Password']");
     public By  resetPassSendText= By.xpath("//h6[normalize-space()='Reset Password link sent successfully']");
+    public By  dashboard = By.xpath("//h6[normalize-space()='Dashboard']");
+
 
 
 

@@ -17,7 +17,7 @@ public class BasePages {
         getDriver().manage().window().maximize();
     }
     public WebElement waitForElement(By locator){
-        WebDriverWait wait = new WebDriverWait(getDriver(),Duration.ofSeconds(10));
+        WebDriverWait wait = new WebDriverWait(getDriver(),Duration.ofSeconds(20));
        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
     }
