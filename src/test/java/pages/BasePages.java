@@ -6,6 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Objects;
 
 import static utilities.DriverSetUp.getDriver;
 
@@ -39,4 +40,8 @@ public class BasePages {
    public void backwardPage(){
         getDriver().navigate().back();
    }
+    public boolean checkCurrentUrl(String url) {
+        return getDriver().getCurrentUrl().equals(url);
+    }
+
 }

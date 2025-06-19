@@ -1,6 +1,7 @@
 package utilities;
 
 
+import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 
 public class DataSet {
@@ -13,12 +14,11 @@ public class DataSet {
                  {"","admin123","Invalid credentials","Required"},
                  {"admin","","Invalid credentials","Required"},
                  {"","","Invalid credentials","Required"},
-//                 {"12234","admin123","Invalid credentials","Required"},
-//                 {"admin","12234","Invalid credentials","Required"}
 
          };
          return data;
      }
+
     @DataProvider(name ="ForgotPassAndResetPass")
     public static Object TestForgotPassword(){
 
@@ -29,14 +29,29 @@ public class DataSet {
         };
         return data;
     }
- @DataProvider(name = "cancelResetPass")
-    public static Object CancelResetButton(){
-       Object [][] data = {
-               {""},
-               {"Admin"}
 
-       };
-       return data;
+    @DataProvider(name = "cancelResetPass")
+    public static Object CancelResetButton(){
+        Object [][] data = {
+                {""},
+                {"Admin"}
+
+        };
+        return data;
+    }
+
+    @DataProvider(name ="WidgetTitle")
+    public static Object TestDashboardWidgetTitle(){
+        Object [][] data ={
+                {"Time at Work"},
+                {"My Actions"},
+                {"Quick Launch"},
+                {"Buzz Latest Posts"},
+                {"Employees on Leave Today"},
+                {"Employee Distribution by Sub Unit"},
+                {"Employee Distribution by Sub Location"}
+        };
+        return data;
     }
 
 }

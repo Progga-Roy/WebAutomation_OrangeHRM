@@ -29,7 +29,13 @@ public class LoginPage extends BasePages {
 
 //span[contains(text=(),'Required')
 
-
+public void LoginThePage(){
+    loadAPage(url);
+    waitForElement(userInputField);
+    writeOnElement(userInputField,userName);
+    writeOnElement(userPasswordField,userPassword);
+    clickOnElement(loginBtn);
+}
 
 
 
