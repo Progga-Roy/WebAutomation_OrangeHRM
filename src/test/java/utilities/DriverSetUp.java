@@ -2,11 +2,12 @@ package utilities;
 
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 
 public class DriverSetUp {
@@ -21,12 +22,12 @@ public class DriverSetUp {
         return DRIVER_THREAD_LOCAL.get();
     }
 
-    @BeforeSuite
+    @BeforeMethod
     public void startBrowser(){
        WebDriver driver = getBrowser(browser_name);
        setDriver(driver);
     }
-    @AfterSuite
+    @AfterMethod
     public void closeBrowser(){
         getDriver().quit();
     }

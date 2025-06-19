@@ -19,5 +19,24 @@ public class DataSet {
          };
          return data;
      }
+    @DataProvider(name ="ForgotPassAndResetPass")
+    public static Object TestForgotPassword(){
+
+        Object [][] data = {
+                {"Admin",true,"Reset Password link sent successfully"},
+                {"",false,"Required"},
+                {"invalidName",true,"Reset Password link sent successfully"},
+        };
+        return data;
+    }
+ @DataProvider(name = "cancelResetPass")
+    public static Object CancelResetButton(){
+       Object [][] data = {
+               {""},
+               {"Admin"}
+
+       };
+       return data;
+    }
 
 }
