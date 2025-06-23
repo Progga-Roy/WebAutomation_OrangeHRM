@@ -40,18 +40,18 @@ public class DataSet {
         return data;
     }
 
-    @DataProvider(name ="WidgetTitle")
-    public static Object TestDashboardWidgetTitle(){
-        Object [][] data ={
-                {"Time at Work"},
-                {"My Actions"},
-                {"Quick Launch"},
-                {"Buzz Latest Posts"},
-                {"Employees on Leave Today"},
-                {"Employee Distribution by Sub Unit"},
-                {"Employee Distribution by Sub Location"}
-        };
-        return data;
-    }
+//    @DataProvider(name ="WidgetTitle")
+//    public static Object TestDashboardWidgetTitle(){
+//        Object [][] data ={
+//                {dashboard_page.TimeAtWork,dashboard_page.TimeAtWorkText,dashboard_page.attendanceIcon,dashboard_page.attendancePath,dashboard_page.AttendanceText},
+////                {"My Actions"},
+////                {"Quick Launch"},
+////                {"Buzz Latest Posts"},
+////                {"Employees on Leave Today"},
+////                {"Employee Distribution by Sub Unit"},
+////                {"Employee Distribution by Sub Location"}
+//        };
+//        return data;
+//    }
 
 }

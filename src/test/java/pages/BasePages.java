@@ -2,9 +2,11 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import javax.swing.*;
 import java.time.Duration;
 import java.util.Objects;
 
@@ -19,7 +21,7 @@ public class BasePages {
     }
     public WebElement waitForElement(By locator){
         WebDriverWait wait = new WebDriverWait(getDriver(),Duration.ofSeconds(10));
-       return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 
     }
     public WebElement getElement(By locator){
@@ -28,20 +30,28 @@ public class BasePages {
     public void writeOnElement(By locator, String text ){
         getElement(locator).sendKeys(text);
     }
-   public void clickOnElement(By locator){
+    public void clickOnElement(By locator){
         getElement(locator).click();
-   }
-   public String getElementText(By locator){
-       return getElement(locator).getText();
-   }
-   public boolean visibilityState (By locator){
-       return getElement(locator).isDisplayed();
-   }
-   public void backwardPage(){
+    }
+    public String getElementText(By locator){
+        return getElement(locator).getText();
+    }
+    public boolean visibilityState (By locator){
+        return getElement(locator).isDisplayed();
+    }
+    public void backwardPage(){
         getDriver().navigate().back();
-   }
+    }
     public boolean checkCurrentUrl(String url) {
         return getDriver().getCurrentUrl().equals(url);
     }
+    public WebElement scrollElement(By locator){
+        WebElement element = getDriver().findElement(locator);
+        Actions action = new Actions(getDriver());
+        action.scrollToElement(element).build().perform();
+        return element;
+    }
+
+
 
 }
