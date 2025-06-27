@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -51,7 +52,15 @@ public class BasePages {
         action.scrollToElement(element).build().perform();
         return element;
     }
-
-
+    public WebElement markAll (By locator){
+        WebElement element =getDriver().findElement(locator);
+        element.click();
+        Actions action = new Actions(getDriver());
+        action.keyDown(Keys.CONTROL).sendKeys("a").build().perform();
+        return element;
+    }
+public void clearInput(By locator){
+        getDriver().findElement(locator).clear();
+}
 
 }
