@@ -114,4 +114,34 @@ public class TestTimePages extends DriverSetUp {
 
     }
 
+    @Test
+    public void TestEmptyFieldForPunchIn() throws InterruptedException {
+        login_page.LoginThePage();
+        time_page.EnterThePageAndClickTheIcon();
+        time_page.waitForElement(time_page.attendanceDropdown);
+        time_page.clickOnElement(time_page.attendanceDropdown);
+        time_page.waitForElement(time_page.selectMenu);
+        time_page.clickOnElement(time_page.selectMenu);
+        time_page.waitForElement(time_page.calender);
+        Thread.sleep(3000);
+        time_page.clickOnElement(time_page.calender);
+        time_page.markAll(time_page.calender);
+        Thread.sleep(3000);
+        time_page.clearInput(time_page.calender);
+        Thread.sleep(3000);
+        time_page.clickOnElement(time_page.time);
+        Thread.sleep(3000);
+        time_page.markAll(time_page.time);
+        Thread.sleep(3000);
+        time_page.clearInput(time_page.time);
+        Thread.sleep(3000);
+        time_page.visibilityState(time_page.required);
+        Assert.assertEquals(time_page.getElementText(time_page.required),time_page.requiredText);
+        Assert.assertTrue(time_page.visibilityState(time_page.punchInButton),"In");
+        time_page.clickOnElement(time_page.punchInButton);
+
+
+
+    }
+
 }

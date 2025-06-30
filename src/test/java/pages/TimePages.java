@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 public class TimePages extends BasePages {
     public String attendanceText = "Attendance";
     public String selectMonthText = "October";
+    public String requiredText = "Required";
+
 // public String buttonText = getElementText(punchInButton).trim();
     public By clickTime = By.xpath("//a[@class='oxd-main-menu-item active']//span[1]");
     public By timesheetsPath = By.xpath("//h6[@class='oxd-text oxd-text--h6 oxd-topbar-header-breadcrumb-level']");
@@ -30,8 +32,12 @@ public class TimePages extends BasePages {
 
     public By textArea = By.xpath("//textarea[@placeholder='Type here']");
     public By punchInButton = By.xpath("//button[normalize-space()='In']");
+//    public By required = By.xpath("//span[contains(text(),'Required')]");
+    public By required = By.xpath("//span[@class='oxd-text oxd-text--span oxd-input-field-error-message oxd-input-group__message']");
 //    public By punchOutButton = By.xpath("//button[normalize-space()='Out']");
 //   public String buttonText = getPunchButtonText();
+
+
 
     public String getPunchButtonText() {
         return getElementText(punchInButton).trim();
