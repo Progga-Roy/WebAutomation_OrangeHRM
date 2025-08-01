@@ -15,7 +15,6 @@ import java.util.List;
 
 public class TestDashboardPage extends DriverSetUp {
 
-    private static final Logger log = LoggerFactory.getLogger(TestDashboardPage.class);
     LoginPage login_page = new LoginPage();
     DashboardPage dashboard_page = new DashboardPage();
 

@@ -7,9 +7,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import javax.swing.*;
 import java.time.Duration;
-import java.util.Objects;
 
 import static utilities.DriverSetUp.getDriver;
 
@@ -46,18 +44,16 @@ public class BasePages {
     public boolean checkCurrentUrl(String url) {
         return getDriver().getCurrentUrl().equals(url);
     }
-    public WebElement scrollElement(By locator){
+    public void scrollElement(By locator){
         WebElement element = getDriver().findElement(locator);
         Actions action = new Actions(getDriver());
         action.scrollToElement(element).build().perform();
-        return element;
     }
-    public WebElement markAll (By locator){
+    public void markAll (By locator){
         WebElement element =getDriver().findElement(locator);
         element.click();
         Actions action = new Actions(getDriver());
         action.keyDown(Keys.CONTROL).sendKeys("a").build().perform();
-        return element;
     }
 public void clearInput(By locator){
         getDriver().findElement(locator).clear();
