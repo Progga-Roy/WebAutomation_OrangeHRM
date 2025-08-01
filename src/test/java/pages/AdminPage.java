@@ -12,6 +12,12 @@ public class AdminPage extends BasePages{
     public By selectAdmin = By.xpath("//div[@role='option']//span[normalize-space()='Admin']");
     public By selectStatus = By.xpath("(//div[@class='oxd-select-text--after'])[2]");
     public By selectEnable = By.xpath("//div[@role='option']//span[normalize-space()='Enabled']");
+    public By employeeName = By.xpath("//input[@placeholder='Type for hints...']");
+    public By uniqueName = By.xpath("(//input[@class='oxd-input oxd-input--active'])[2]");
+    public By password = By.xpath("(//input[@type='password'])[1]");
+    public By confirmPassword = By.xpath("(//input[@type='password'])[2]");
+    public By saveBtn = By.xpath("(//button[normalize-space()='Save'])[1]");
+
 
 
 
