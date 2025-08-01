@@ -31,6 +31,7 @@ public class LoginPage extends BasePages {
 
 public void LoginThePage(){
     loadAPage(url);
+    maximizeScreen();
     waitForElement(userInputField);
     writeOnElement(userInputField,userName);
     writeOnElement(userPasswordField,userPassword);
